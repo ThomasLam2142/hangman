@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <ctype.h> // for isalpha
+
 
 void show_man(int health){
     switch (health){
@@ -57,7 +59,22 @@ int main(){
         show_man(health);
         printf("%d characters remaining: \n", remaining);
         printf("Enter a Letter\n");
-        scanf(" %c", &choice);
+        int valid_input = 0;
+
+        while (!valid_input) {
+            printf("Enter a letter: ");
+            scanf(" %c", &choice);
+
+            // Clear rest of input buffer
+            int c;
+            while ((c = getchar()) != '\n' && c != EOF);
+
+            if (!isalpha(choice)) {
+                printf("Invalid input. Please enter a letter (A-Z or a-z).\n");
+            } else {
+                valid_input = 1;
+            }
+        }
         printf("You have guessed : %c\n", choice);
 
         if (check_ans(choice, word)) {
