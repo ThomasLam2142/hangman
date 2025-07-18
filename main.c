@@ -72,6 +72,7 @@ int main(){
             if (!isalpha(choice)) {
                 printf("Invalid input. Please enter a letter (A-Z or a-z).\n");
             } else {
+                choice = tolower(choice);
                 valid_input = 1;
             }
         }

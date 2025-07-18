@@ -4,7 +4,7 @@ A simple command-line Hangman game where users guess letters to reveal a hidden 
 
 ## Feature Priority List
 
-1. Validate user input to ensure only single letters are accepted.
+1. Validate user input to ensure only single letters are accepted. COMPLETE
 2. Handle both uppercase and lowercase input for guesses.
 3. Track and display which letters have already been guessed, so users don’t repeat guesses.
 4. Show the current progress of the word (e.g., "_ e _ t e r") after each guess.
